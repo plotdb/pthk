@@ -7,6 +7,11 @@ path kit. simply a nodejs `path` module with additional method:
    - always return a relative path instead of absolute path beginned with `/`.
 
 
+## Reference
+
+ - `node-sanitize-filename`: https://github.com/parshap/node-sanitize-filename
+
+
 ## License
 
 MIT
