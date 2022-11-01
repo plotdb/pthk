@@ -1,16 +1,16 @@
 (function(){
-  var path, sanitize;
+  var path, rectify;
   path = require('path');
-  sanitize = function(name){
+  rectify = function(name){
     var san;
-    san = path.normalize('/' + name.trim().replace(/[\u0000-\u001f\u0080-\u009f?\\:*|"']/g, '')).substring(1);
+    san = path.normalize(path.sep + name.trim().replace(/[\u0000-\u001f\u0080-\u009f?:*|"']/g, '')).substring(1);
     if (!san) {
       throw new Error("illegal filename");
     }
     return san;
   };
   module.exports = import$({
-    sanitize: sanitize
+    rectify: rectify
   }, path);
   function import$(obj, src){
     var own = {}.hasOwnProperty;
